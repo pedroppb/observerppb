@@ -10,10 +10,7 @@ public class Comprador implements Observer {
     public Comprador(String nome){
         this.nome=nome;
     }
-    public void participar(Leilao leilao) {
-        leilao.addObserver(this);
-
-    }
+    public void participar(Leilao leilao) { leilao.addObserver(this); }
     public void darLance(Leilao leilao, double valor){
         leilao.ReceberLance(valor,nome);
     }
