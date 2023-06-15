@@ -1,12 +1,14 @@
 package observerppb;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
 public class Comprador implements Observer {
     private String nome;
-
     private String ultimaNotificacao ="Sem notificação";
+    private List<String> memento = new ArrayList<String>();
     public Comprador(String nome){
         this.nome=nome;
     }
@@ -18,6 +20,7 @@ public class Comprador implements Observer {
     @Override
     public void update(Observable leilao, Object arg) {
         this.ultimaNotificacao = leilao.toString();
+        memento.add(ultimaNotificacao);
     }
 
     public String getNome() {
